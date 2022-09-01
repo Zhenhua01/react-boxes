@@ -11,13 +11,13 @@ import { useState } from "react";
  * App -> BoxList -> (Box, NewBoxForm)
  */
 
- function NewBoxForm({ addItem }) {
+function NewBoxForm({ addItem }) {
   const initialState = { height: "", width: "", backgroundColor: "" };
   const [formData, setFormData] = useState(initialState);
 
   /** Send {name, value} to parent
    *    & clear form. */
-   function handleSubmit(evt) {
+  function handleSubmit(evt) {
     evt.preventDefault();
     addItem(formData);
     setFormData(initialState);
@@ -40,6 +40,7 @@ import { useState } from "react";
         name="height"
         value={formData.height}
         onChange={handleChange}
+        required
       />
 
       <label htmlFor="width">Width:</label>
@@ -48,6 +49,7 @@ import { useState } from "react";
         name="width"
         value={formData.width}
         onChange={handleChange}
+        required
       />
 
       <label htmlFor="backgroundColor">Background Color:</label>
@@ -56,6 +58,7 @@ import { useState } from "react";
         name="backgroundColor"
         value={formData.backgroundColor}
         onChange={handleChange}
+        required
       />
 
       <button>Add a new box!</button>

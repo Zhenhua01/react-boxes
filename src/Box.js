@@ -10,23 +10,23 @@
  * App -> BoxList -> (Box, NewBoxForm)
  */
 
- function Box({ height, width, backgroundColor, removeButton }) {
+function Box({ height, width, backgroundColor, removeClickHandler }) {
 
   const styles = {
-    height,
-    width,
+    height: `${height}px`,
+    width: `${width}px`,
     backgroundColor
-  }
+  };
 
   return (
-    <div className="Box">
-        <div style={styles}></div>
+    <li className="Box">
+      <div style={styles}></div>
 
-        <button onClick={removeButton}>
-          Remove The Box!
-        </button>
-    </div>
-  )
+      <button style={{ textAlign: "left" }} onClick={removeClickHandler}>
+        Remove The Box!
+      </button>
+    </li>
+  );
 }
 
 
